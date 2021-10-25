@@ -1,0 +1,15 @@
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 15px;
+  text-align: center;
+  width: 600px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.input {
+  padding: 7px;
+  width: 400px;
+}

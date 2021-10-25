@@ -1,0 +1,19 @@
+.wrap {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 170px;
+  background-color: rgb(245, 245, 245);
+}
+
+.title {
+  font-size: 33px;
+  font-weight: 800;
+  color: rgb(97, 94, 94);
+  margin-bottom: 30px;
+}
+
+.subtitle {
+  font-size: 28px;
+  font-weight: 500;
+  color: rgb(97, 94, 94);
+}

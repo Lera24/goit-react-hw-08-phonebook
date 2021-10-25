@@ -1,0 +1,14 @@
+.link {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: normal;
+  color: black;
+}
+
+.link:hover {
+  color: rgb(97, 94, 94);
+}
+
+.activeLink {
+  border-bottom: 2px solid black;
+}
