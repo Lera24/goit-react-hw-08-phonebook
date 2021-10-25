@@ -47,21 +47,25 @@ const logOutUser = createAsyncThunk("/auth/logout", async () => {
   }
 });
 
-const fetchCurrentUser = createAsyncThunk("auth/fetch", async (_, thunkApi) => {
-  const state = thunkApi.getState();
-  const persistorToken = state.auth.token;
+const fetchCurrentUser = createAsyncThunk(
+  "auth/fetch",
+  async (_, thunkApi, { rejectWithValue }) => {
+    const state = thunkApi.getState();
+    const persistorToken = state.auth.token;
 
-  if (!persistorToken) {
-    return;
+    if (persistorToken === null) {
+      return thunkApi.rejectWithValue();
+    }
+    token.set(persistorToken);
+
+    try {
+      const { data } = await axios.get("/users/current/");
+      return data;
+    } catch (error) {
+      rejectWithValue(error.response.data);
+    }
   }
-  token.set(persistorToken);
-  try {
-    const { data } = await axios.get("/users/current/");
-    return data;
-  } catch (error) {
-    return error;
-  }
-});
+);
 
 const authOperations = {
   registerUser,

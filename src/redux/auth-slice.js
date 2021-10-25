@@ -70,9 +70,11 @@ const authSlice = createSlice({
     },
     [authOperations.fetchCurrentUser.pending](state) {
       state.isRefreshingUser = true;
+      state.isLoggedIn = false;
     },
     [authOperations.fetchCurrentUser.rejected](state) {
       state.isRefreshingUser = false;
+      state.isLoggedIn = false;
     },
   },
 });

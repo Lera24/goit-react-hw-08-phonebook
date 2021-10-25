@@ -34,15 +34,15 @@ export default function App() {
               <HomePage />
             </PublicRoute>
 
-            <PrivateRoute path="/contacts" redirectTo="/login">
+            <PrivateRoute path="/contacts" exact redirectTo="/login">
               <ContactPage />
             </PrivateRoute>
 
-            <PublicRoute path="/register" restricted>
+            <PublicRoute path="/register" exact restricted>
               <RegistrationPage />
             </PublicRoute>
 
-            <PublicRoute path="/login" redirectTo="/contacts" restricted>
+            <PublicRoute path="/login" exact redirectTo="/contacts" restricted>
               <LoginPage />
             </PublicRoute>
           </Suspense>
