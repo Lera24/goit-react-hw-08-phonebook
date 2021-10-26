@@ -25,10 +25,12 @@ const authSlice = createSlice({
     [authOperations.registerUser.pending](state) {
       state.isErrorRegister = false;
       state.isPending = true;
+      state.token = null;
     },
     [authOperations.registerUser.rejected](state) {
       state.isErrorRegister = true;
       state.isPending = false;
+      state.token = null;
     },
 
     [authOperations.logInUser.fulfilled](state, action) {
@@ -40,11 +42,13 @@ const authSlice = createSlice({
     },
     [authOperations.logInUser.pending](state) {
       state.isErrorLogin = false;
+      state.token = null;
       state.isPending = true;
     },
     [authOperations.logInUser.rejected](state) {
       state.isErrorLogin = true;
       state.isPending = false;
+      state.token = null;
     },
 
     [authOperations.logOutUser.fulfilled](state) {
