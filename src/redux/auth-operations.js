@@ -50,7 +50,7 @@ const logOutUser = createAsyncThunk("/auth/logout", async () => {
 const fetchCurrentUser = createAsyncThunk("auth/fetch", async (_, thunkApi) => {
   const state = thunkApi.getState();
   const persistorToken = state.auth.token;
-  console.log(persistorToken);
+
   if (persistorToken === null) {
     return thunkApi.rejectWithValue();
   }
